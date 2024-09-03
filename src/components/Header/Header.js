@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, WEIGHTS } from '../../constants';
+import { COLORS, QUERIES, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
+import { Menu, ShoppingBag, Search } from 'react-feather';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
 
@@ -30,13 +31,20 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <MobileNav>
+          <ShoppingBag />
+          <Search />
+          <Button onClick={() => setShowMobileMenu(true)}>
+            <Menu />
+          </Button>
+        </MobileNav>
       </MainHeader>
 
       <MobileMenu
         isOpen={showMobileMenu}
         onDismiss={() => setShowMobileMenu(false)}
       />
-    </header>
+  </header>
   );
 };
 
@@ -52,7 +60,21 @@ const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${QUERIES.tabletAndDown} {
+    display: none;
+  }
 `;
+
+const MobileNav = styled.nav`
+  display: none;
+  gap: 24px;
+  margin: 0 48px;
+
+  @media ${QUERIES.tabletAndDown} {
+    display: flex;
+  }
+`
 
 const Side = styled.div`
   flex: 1;
@@ -68,6 +90,11 @@ const NavLink = styled.a`
   &:first-of-type {
     color: ${COLORS.secondary};
   }
+`;
+
+const Button = styled.button`
+  background-color: transparent;
+  border: none;
 `;
 
 export default Header;
