@@ -24,11 +24,11 @@ const Header = () => {
         </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="/new">New&nbsp;Releasesaaaa</NavLink>
+          <NavLink href="/men">Menaaaa</NavLink>
+          <NavLink href="/women">Womenaaaaa</NavLink>
+          <NavLink href="/kids">Kidsaaaaaa</NavLink>
+          <NavLink href="/collections">Collectionsaaaa</NavLink>
         </Nav>
         <Side />
         <MobileNav>
@@ -58,8 +58,13 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(
+    12px,
+    5vw - 2rem,
+    48px
+  );
   margin: 0px 48px;
+  overflow: auto;
 
   @media ${QUERIES.tabletAndDown} {
     display: none;
