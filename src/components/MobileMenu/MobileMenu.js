@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { COLORS } from '../../constants';
-
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
@@ -18,7 +16,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
     <Wrapper>
       <FlexWrapper>
         <Button onClick={onDismiss}>
-          <Icon id={'close'} color={COLORS.gray[900]} size={'24px'} strokeWidth={'2px'} />
+          <Icon id={'close'} color={'var(--color-gray-900'} size={'24px'} strokeWidth={'2px'} />
         </Button>
         <Nav>
           <Link href="/sale">Sale</Link>
@@ -39,7 +37,7 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
 };
 
 const Wrapper = styled(DialogOverlay)`
-  background-color: ${COLORS.fade};
+  background-color: var(--color-fade);
   height: 100%;
   width: 100%;
   position: absolute;
@@ -51,7 +49,7 @@ const FlexWrapper = styled(DialogContent)`
   position: absolute;
   top: 0;
   right: 0;
-  background-color: ${COLORS.white};
+  background-color: var(--color-white);
   display: flex;
   flex-direction: column;
   padding: 26px 16px 32px 32px;
@@ -80,20 +78,20 @@ const Footer = styled.footer`
 `;
 
 const Link = styled.a`
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   text-decoration: none;
   width: fit-content;
 
   &:hover {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 
   &:focus {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 
   ${Footer} & {
-    color: ${COLORS.gray[700]};
+    color: var(--color-gray-700);
   }
 `;
 

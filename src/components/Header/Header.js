@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
+import { QUERIES, WEIGHTS } from '../../constants';
 import Logo from '../Logo';
 import { Menu, ShoppingBag, Search } from 'react-feather';
 import SuperHeader from '../SuperHeader';
@@ -24,11 +24,11 @@ const Header = () => {
         </Side>
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releasesaaaa</NavLink>
-          <NavLink href="/men">Menaaaa</NavLink>
-          <NavLink href="/women">Womenaaaaa</NavLink>
-          <NavLink href="/kids">Kidsaaaaaa</NavLink>
-          <NavLink href="/collections">Collectionsaaaa</NavLink>
+          <NavLink href="/new">New&nbsp;Releases</NavLink>
+          <NavLink href="/men">Men</NavLink>
+          <NavLink href="/women">Women</NavLink>
+          <NavLink href="/kids">Kids</NavLink>
+          <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
         <MobileNav>
@@ -53,7 +53,7 @@ const MainHeader = styled.div`
   align-items: baseline;
   padding: 18px 32px;
   height: 72px;
-  border-bottom: 1px solid ${COLORS.gray[300]};
+  border-bottom: 1px solid var(--color-gray-300);
 `;
 
 const Nav = styled.nav`
@@ -89,11 +89,11 @@ const NavLink = styled.a`
   font-size: 1.125rem;
   text-transform: uppercase;
   text-decoration: none;
-  color: ${COLORS.gray[900]};
+  color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
 
   &:first-of-type {
-    color: ${COLORS.secondary};
+    color: var(--color-secondary);
   }
 `;
 
